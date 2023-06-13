@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { Form, Label, Input } from './ContactForm.styled';
 import { getContacts } from 'redux/selectors';
-import { addContact } from 'redux/contactsSlice';
+import { addContact } from 'redux/operations';
 
 export const ContactForm = () => {
   const contacts = useSelector(getContacts);
@@ -25,7 +25,7 @@ export const ContactForm = () => {
 
   const formSubmitHandler = data => {
     contacts.some(
-      contact => contact.name.toLowerCase() === data.name.toLowerCase()
+      contact => contact.data.name.toLowerCase() === data.name.toLowerCase()
     )
       ? alert(`${data.name} is already in contacts`)
       : dispatch(addContact({ name, number })) && formReset();

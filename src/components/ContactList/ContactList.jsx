@@ -13,7 +13,7 @@ export const ContactList = () => {
     filter === ''
       ? contacts
       : contacts.filter(contact =>
-          contact.name.toLowerCase().includes(filter.toLowerCase())
+          contact.data.name.toLowerCase().includes(filter.toLowerCase())
         );
 
   return (
@@ -22,8 +22,8 @@ export const ContactList = () => {
         <ContactListItem
           key={item.id}
           id={item.id}
-          name={item.name}
-          number={item.number}
+          name={item.data.name}
+          number={item.data.number}
         />
       ))}
     </List>
