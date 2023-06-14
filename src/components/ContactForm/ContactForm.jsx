@@ -25,7 +25,7 @@ export const ContactForm = () => {
 
   const formSubmitHandler = data => {
     contacts.some(
-      contact => contact.data.name.toLowerCase() === data.name.toLowerCase()
+      contact => contact.name.toLowerCase() === data.name.toLowerCase()
     )
       ? alert(`${data.name} is already in contacts`)
       : dispatch(addContact({ name, number })) && formReset();
