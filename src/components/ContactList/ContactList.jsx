@@ -13,7 +13,7 @@ export const ContactList = () => {
     filter === ''
       ? contacts
       : contacts.filter(contact =>
-          contact.data.name.toLowerCase().includes(filter.toLowerCase())
+          contact.name.toLowerCase().includes(filter.toLowerCase())
         );
 
   return (
